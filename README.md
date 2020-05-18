@@ -1,2 +1,4 @@
 # azure-sgx
-sgx builds for Azure VMs
+
+Intel SGX enabled images on Azure
+
