@@ -5,8 +5,8 @@ sgx-detect
 
 # install tools
 sudo apt -y update
-sudo apt -y install -y git wget bubblewrap gcc gcc-c++ \
-protobuf-compiler make cmake openssl-devel libseccomp-devel
+sudo apt -y install -y git bubblewrap gcc gcc-c++ \
+make cmake openssl-devel libseccomp-devel
 
 # install golang
 wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz -O go.tar.gz
