@@ -5,7 +5,7 @@ sgx-detect
 
 # install tools
 sudo apt -y update
-sudo apt -y install -y git bubblewrap gcc gcc-c++ \
+sudo apt -y install git bubblewrap gcc gcc-c++ \
 make cmake openssl-devel libseccomp-devel
 
 # install golang
