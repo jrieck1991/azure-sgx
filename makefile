@@ -5,10 +5,10 @@
 
 base:
 	pushd base && \
-	packer build build.json && \
+	time packer build build.json && \
 	popd
 
 oasis:
 	pushd oasis && \
-	packer build build.json && \
+	time packer build build.json && \
 	popd
