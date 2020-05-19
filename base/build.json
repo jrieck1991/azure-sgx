@@ -17,7 +17,7 @@
       "image_offer": "UbuntuServer",
       "image_sku": "18_04-lts-gen2",
       "location": "East US",
-      "vm_size": "Standard_DC1s_v2",
+      "vm_size": "Standard_DC4s_v2",
       "communicator": "ssh",
       "ssh_username": "main"
     }
