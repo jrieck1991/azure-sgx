@@ -8,8 +8,7 @@ sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt -y update
 
 # install tools
-sudo apt -y install git bubblewrap gcc gcc-c++ \
-make openssl-devel libseccomp-dev golang-go
+sudo apt -y install bubblewrap cmake libseccomp-dev golang-go
 
 # clone latest release of oasis-core
 git clone --depth 1 -b v20.6 https://github.com/oasislabs/oasis-core.git
