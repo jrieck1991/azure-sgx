@@ -18,3 +18,6 @@ pushd oasis-core && \
 rustup target add x86_64-fortanix-unknown-sgx && \
 OASIS_UNSAFE_SKIP_AVR_VERIFY=1 OASIS_UNSAFE_KM_POLICY_KEYS=1 OASIS_UNSAFE_ALLOW_DEBUG_ENCLAVES=1 make
 popd
+
+# copy oasis-node binary to path
+sudo cp oasis-core/go/oasis-node/oasis-node /usr/bin
