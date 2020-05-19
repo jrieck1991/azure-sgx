@@ -12,13 +12,14 @@
       "client_secret": "{{user `client_secret`}}",
       "managed_image_name": "sgx-base-{{timestamp}}",
       "managed_image_resource_group_name": "sgx-test",
-      "resource_group_name": "sgx-test",
       "os_type": "Linux",
       "image_publisher": "Canonical",
       "image_offer": "UbuntuServer",
       "image_sku": "18_04-lts-gen2",
       "location": "East US",
-      "vm_size": "Standard_DC1s_v2"
+      "vm_size": "Standard_DC1s_v2",
+      "communicator": "ssh",
+      "ssh_username": "main"
     }
   ],
   "provisioners": [
@@ -29,7 +30,7 @@
     {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
       "inline": [
-        "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+        "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
       ],
       "inline_shebang": "/bin/sh -x",
       "type": "shell"

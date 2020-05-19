@@ -1,8 +1,5 @@
 #!/bin/bash -xe
 
-# change to 'main' user created in the base image
-sudo su - main
-
 # run utility to check SGX is configured properly before starting
 sgx-detect
 
