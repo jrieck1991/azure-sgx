@@ -1,5 +1,15 @@
 #!/bin/bash -xe
 
+# TODO: user idea seems too coupled between layers
+# issue: rust is installed on a per user basis,
+# this makes it harder to install the rust stuff in places all users can retrieve
+# create user
+sudo useradd -m main
+sudo usermod -aG sudo main
+
+# change to new user
+sudo su - main
+
 # configure APT and MSFT repos
 echo 'deb [arch=amd64] https://download.01.org/intel-sgx/sgx_repo/ubuntu bionic main' | sudo tee /etc/apt/sources.list.d/intel-sgx.list
 wget -qO - https://download.01.org/intel-sgx/sgx_repo/ubuntu/intel-sgx-deb.key | sudo apt-key add -
