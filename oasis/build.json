@@ -12,7 +12,7 @@
       "client_secret": "{{user `client_secret`}}",
       "managed_image_name": "sgx-oasis-{{timestamp}}",
       "managed_image_resource_group_name": "sgx-test",
-      "custom_managed_image_name": "sgx-base-1589855064",
+      "custom_managed_image_name": "sgx-base-1589899479",
       "custom_managed_image_resource_group_name": "sgx-test",
       "os_type": "Linux",
       "location": "East US",
@@ -23,7 +23,7 @@
     {
       "type": "shell",
       "script": "provision.sh",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E su -c \"bash '{{ .Path }}'\" - main"
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E su -c \"bash '{{ .Path }}'\" - jrieck"
     },
     {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",

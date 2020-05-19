@@ -3,15 +3,13 @@
 # run utility to check SGX is configured properly before starting
 sgx-detect
 
-# install tools
+# add golang repo for latest go version
+sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt -y update
-sudo apt -y install git bubblewrap gcc gcc-c++ \
-make cmake openssl-devel libseccomp-devel
 
-# install golang
-wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz -O go.tar.gz
-sudo tar -C /usr/local -xzf go.tar.gz
-export PATH=/usr/local/go/bin:$PATH
+# install tools
+sudo apt -y install git bubblewrap gcc gcc-c++ \
+make openssl-devel libseccomp-dev golang-go
 
 # clone latest release of oasis-core
 git clone --depth 1 -b v20.6 https://github.com/oasislabs/oasis-core.git

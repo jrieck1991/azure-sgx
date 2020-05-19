@@ -19,7 +19,7 @@
       "location": "East US",
       "vm_size": "Standard_DC2s_v2",
       "communicator": "ssh",
-      "ssh_username": "main"
+      "ssh_username": "jrieck"
     }
   ],
   "provisioners": [
