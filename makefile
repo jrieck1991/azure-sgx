@@ -1,5 +1,7 @@
-.PHONY: image
+.PHONY: base
 
-image:
-	PACKER_LOG=1 packer build build.json
+base:
+	pushd base && \
+	packer build build.json && \
+	popd
 
