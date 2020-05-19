@@ -37,4 +37,3 @@ rustup target add x86_64-fortanix-unknown-sgx
 
 # run utility to check SGX is configured properly
 sgx-detect
-

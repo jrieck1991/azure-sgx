@@ -2,7 +2,6 @@
 
 Intel SGX enabled images on Azure
 
-## Related
+## related
 
 [fortanix rust edp](https://github.com/fortanix/rust-sgx)
-
