@@ -17,10 +17,13 @@ wget https://download.01.org/intel-sgx/sgx-dcap/1.4/linux/distro/ubuntuServer18.
 chmod +x sgx_linux_x64_driver.bin
 sudo ./sgx_linux_x64_driver.bin
 
-# install tools and dependencies
+# install dependencies
 sudo apt -y install clang-7 libssl-dev gdb libsgx-enclave-common \
 libsgx-enclave-common-dev libprotobuf10 libsgx-dcap-ql libsgx-dcap-ql-dev \
 az-dcap-client open-enclave protobuf-compiler
+
+# install tools, not required
+sudo apt -y install jq tree
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
