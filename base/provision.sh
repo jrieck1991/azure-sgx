@@ -32,8 +32,5 @@ rustup default nightly
 # install Fortanix Rust EDP utils
 cargo +nightly install fortanix-sgx-tools sgxs-tools
 
-# add Fortanix build target
-rustup target add x86_64-fortanix-unknown-sgx
-
 # run utility to check SGX is configured properly
 sgx-detect
