@@ -1,0 +1,45 @@
+{
+  "variables": {
+    "subscription_id": "{{env `AZ_SUBSCRIPTION_ID`}}",
+    "client_id": "{{env `AZ_CLIENT_ID`}}",
+    "client_secret": "{{env `AZ_CLIENT_SECRET`}}"
+  },
+  "builders": [
+    {
+      "type": "azure-arm",
+      "subscription_id": "{{user `subscription_id`}}",
+      "client_id": "{{user `client_id`}}",
+      "client_secret": "{{user `client_secret`}}",
+      "managed_image_name": "sgx-pdb-{{timestamp}}",
+      "managed_image_resource_group_name": "sgx-test",
+      "custom_managed_image_name": "sgx-base-1589927228",
+      "custom_managed_image_resource_group_name": "sgx-test",
+      "os_type": "Linux",
+      "location": "East US",
+      "vm_size": "Standard_DC2s_v2",
+      "communicator": "ssh",
+      "ssh_username": "jrieck"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "pdb",
+      "destination": "/home/jrieck/pdb"
+    },
+    {
+      "type": "shell",
+      "script": "provision.sh",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E su -c \"bash '{{ .Path }}'\" - jrieck"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
+      ],
+      "inline_shebang": "/bin/sh -x",
+      "type": "shell"
+    }
+  ]
+}
+
