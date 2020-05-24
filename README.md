@@ -6,6 +6,7 @@ Intel SGX enabled images on Azure
 
 * base
 * oasis
+* pdb
 
 ## related
 
