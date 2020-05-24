@@ -28,6 +28,11 @@
       "destination": "/home/jrieck/pdb"
     },
     {
+      "type": "shell",
+      "script": "provision.sh",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E su -c \"bash '{{ .Path }}'\" - jrieck"
+    },
+    {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
       "inline": [
         "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
