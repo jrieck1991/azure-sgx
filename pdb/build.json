@@ -16,7 +16,9 @@
       "custom_managed_image_resource_group_name": "sgx-test",
       "os_type": "Linux",
       "location": "East US",
-      "vm_size": "Standard_DC2s_v2"
+      "vm_size": "Standard_DC2s_v2",
+      "communicator": "ssh",
+      "ssh_username": "jrieck"
     }
   ],
   "provisioners": [
