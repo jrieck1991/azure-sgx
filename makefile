@@ -12,3 +12,8 @@ oasis:
 	pushd oasis && \
 	time packer build build.json && \
 	popd
+
+pdb:
+	pushd pdb && \
+	time packer build build.json && \
+	popd
