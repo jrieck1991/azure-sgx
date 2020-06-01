@@ -1,8 +1,12 @@
 #!/bin/bash -xe
 
+# install rocksdb
+sudo apt -y update
+sudo apt -y install clang librocksdb-dev
+
 # build binary
 cd pdb
-cargo build
+rustup target add x86_64-fortanix-unknown-sgx && cargo build
 
 # cp binary
 cp target/x86_64-fortanix-unknown-sgx/debug/pdb pdb
