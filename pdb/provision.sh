@@ -12,8 +12,9 @@ rustup target add x86_64-fortanix-unknown-sgx && \
 make trusted && make dal
 
 # cp to working dir
-cp target/x86_64-fortanix-unknown-sgx/debug/trusted trusted
-cp target/x86_64-unknown-linux-gnu/debug/dal dal
+cp target/x86_64-fortanix-unknown-sgx/debug/trusted ../trusted
+cp target/x86_64-unknown-linux-gnu/debug/dal ../dal
+cd ..
 
 # convert from ELF to sized SGXS format
 # TODO: tune these params
@@ -26,3 +27,5 @@ openssl genrsa -3 3072 > trusted.pem
 # generates pdb.sig, keep this in same dir as sgxs binary
 # TODO: tune these params
 sgxs-sign --key trusted.pem trusted.sgxs trusted.sig -d --xfrm 7/0 --isvprodid 0 --isvsvn 0
+
+# to run 'ftxsgx-runner trusted.sgxs'
